@@ -1,0 +1,16 @@
+[
+    {
+        "user_id" : "123",
+        "name":"Dhiraj",
+        "hashedPassword": "abc123",
+        "ticked_booked":[
+            {
+                "source":"nagpur",
+                "destination":"pune",
+                "date_of_travel":"2026-12-08T18:30:00Z",
+                "train":[]
+            },
+            {}
+        ]
+    }
+]
