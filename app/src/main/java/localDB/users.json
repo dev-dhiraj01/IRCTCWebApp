@@ -8,9 +8,22 @@
                 "source":"nagpur",
                 "destination":"pune",
                 "date_of_travel":"2026-12-08T18:30:00Z",
-                "train":[]
-            },
-            {}
+                "train":{
+                    "train_id":"abcd",
+                    "train_no":12345,
+                    "seats":[
+                        [0,0,0,0,0,0],
+                        [0,0,0,0,0,0],
+                        [0,0,0,0,0,0],
+                        [0,0,0,0,0,0]
+                    ],
+                    "stations":{
+                        "Banglore":"14:30:00",
+                        "Nagpur":"17:30:00",
+                        "Pune":"23:40:00"
+                    }
+                }
+            }
         ]
     }
 ]
