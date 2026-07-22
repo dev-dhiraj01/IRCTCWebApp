@@ -18,6 +18,9 @@ repositories {
     mavenCentral()
     google()
 }
+bootRun {
+    standardInput = System.in
+}
 
 dependencies {
     // Use JUnit test framework.

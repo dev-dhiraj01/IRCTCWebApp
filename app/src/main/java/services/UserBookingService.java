@@ -1,17 +1,17 @@
 package services;
 
-import com.fasterxml.jackson.core.JsonParser;
+// import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import entities.Ticket;
+// import entities.Ticket;
 import entities.Train;
 import entities.User;
 import util.UserServiceUtil;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+// import java.nio.file.Files;
+// import java.nio.file.Paths;
 import java.util.*;
 
 public class UserBookingService {
@@ -22,7 +22,7 @@ public class UserBookingService {
 
     private User user;
 
-    private final String USER_FILE_PATH = "app/src/main/java/ticket/booking/localDb/users.json";
+    private final String USER_FILE_PATH = "C:\\Users\\Dhiraj\\OneDrive\\Desktop\\MavenProjects\\irctc\\app\\src\\main\\java\\localDB\\users.json";
 
     public UserBookingService(User user) throws IOException {
         this.user = user;
@@ -80,6 +80,7 @@ public class UserBookingService {
 
         if (ticketId == null || ticketId.isEmpty()) {
             System.out.println("Ticket ID cannot be null or empty.");
+            s.close();
             return Boolean.FALSE;
         }
 
@@ -90,9 +91,11 @@ public class UserBookingService {
         user.getTicketsBooked().removeIf(Ticket -> Ticket.getTicketId().equals(finalTicketId));
         if (removed) {
             System.out.println("Ticket with ID " + ticketId + " has been canceled.");
+            s.close();
             return Boolean.TRUE;
         } else {
             System.out.println("No ticket found with ID " + ticketId);
+            s.close();
             return Boolean.FALSE;
         }
     }

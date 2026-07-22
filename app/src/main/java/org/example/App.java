@@ -1,6 +1,5 @@
 package org.example;
 
-
 import entities.Train;
 import entities.User;
 import services.UserBookingService;
@@ -24,8 +23,8 @@ public class App {
         try {
             userBookingService = new UserBookingService();
         } catch (IOException ex) {
-            System.out.println("There is something wrong");
-            scanner.close();
+            ex.printStackTrace();
+            // scanner.close();
             return;
         }
         while (option != 7) {
@@ -37,6 +36,10 @@ public class App {
             System.out.println("5. Book a Seat");
             System.out.println("6. Cancel my Booking");
             System.out.println("7. Exit the App");
+            if (!scanner.hasNextInt()) {
+                System.out.println("No input received. Exiting application.");
+                break;
+            }
             option = scanner.nextInt();
             Train trainSelectedForBooking = new Train();
             switch (option) {
@@ -110,6 +113,6 @@ public class App {
                     break;
             }
         }
-        scanner.close();
     }
+
 }
